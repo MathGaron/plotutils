@@ -5,7 +5,7 @@ import matplotlib
 matplotlib.style.use('ggplot')
 
 if __name__ == '__main__':
-    filename = "template.csv"
+    filename = "templates/scatter.csv"
 
     df = pd.read_csv(filename)
     column_tags = df.columns.values
