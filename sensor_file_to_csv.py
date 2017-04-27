@@ -33,4 +33,6 @@ if __name__ == '__main__':
     filename = "Sensor AH44020-2016-12-07-14-00-23-992.txt"
     filepath = os.path.join("files", filename)
     dataframe = file2pandas(filepath)
-    dataframe.to_csv(filepath.split(".")[0] + ".csv")
+    writer = pd.ExcelWriter(filepath.split(".")[0] +'.xlsx', engine='xlsxwriter')
+    dataframe.to_excel(writer, sheet_name='Sheet1')
+    writer.save()
